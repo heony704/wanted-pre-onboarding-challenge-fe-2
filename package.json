@@ -2,10 +2,12 @@
   "name": "wanted-fe-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "jsdoc -c jsdoc.config.json"
+    "jsdoc": "jsdoc -c jsdoc.config.json",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
