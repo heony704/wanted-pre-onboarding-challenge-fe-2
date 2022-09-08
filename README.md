@@ -60,7 +60,7 @@ yarn
 ```bash
 npm run jsdoc
 or
-yarn docs
+yarn jsdoc
 ```
 
 ## 🔗 Reference
