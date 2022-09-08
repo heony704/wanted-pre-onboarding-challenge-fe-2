@@ -45,7 +45,25 @@ Todo {
 -   특정 할 일의 특정 태그를 삭제할 수 있다.
 -   특정 할 일의 모든 태그를 제거할 수 있다.
 
-## Reference
+## 💻 Usage
+
+### 초기 설치
+
+```bash
+npm install
+or
+yarn
+```
+
+### JSDoc 웹사이트 생성
+
+```bash
+npm run jsdoc
+or
+yarn docs
+```
+
+## 🔗 Reference
 
 -   [JSDoc 공식문서](https://jsdoc.app/)
 -   [JSDoc Boilerplate](https://github.com/pocojang/jsdoc-boilerplate)
