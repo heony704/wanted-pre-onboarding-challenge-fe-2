@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "jsdoc -c jsdoc.config.json"
+    "jsdoc": "jsdoc -c jsdoc.config.json"
   },
   "repository": {
     "type": "git",
