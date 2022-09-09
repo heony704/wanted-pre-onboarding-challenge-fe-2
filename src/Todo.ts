@@ -131,7 +131,6 @@ export default class Todo {
     /**
      * Todo를 주어진 내용에 따라 수정한다.
      * @func
-     * @param { string } id - 수정하려는 Todo의 아이디
      * @param { Object } newTodo - 수정할 부분만 합쳐서 객체로 받음
      * @param { string } newTodo.content - 수정할 내용
      * @param { string } newTodo.category - 수정할 카테고리
