@@ -1,5 +1,9 @@
-import Todo from './Todo.js';
+import Todo from './Todo';
+
 export default class TodoList {
+    _nextTodoId: number;
+    _todos: Todo[];
+
     /**
      * Todo List를 만든다.
      */
@@ -28,7 +32,9 @@ export default class TodoList {
      * @return { Todo } 해당 id의 Todo
      */
     getTodo(id) {
-        return this._todos.filter((todo) => todo.id === id);
+        for (let i=0; i<this._todos.length; i++) {
+            if (this._todos[i]._id === id) return this._todos[i];
+        }
     }
 
     /**
@@ -46,9 +52,11 @@ export default class TodoList {
      * @param { string } id - 삭제하려는 Todo의 아이디
      */
     deleteTodo(id) {
-        const targetTodoIndex = this._todos.indexOf(
-            this._todos.filter((todo) => todo.id === id)
-        );
+        let targetTodoIndex = -1;
+        for (let i=0; i<this._todos.length; i++) {
+            if (this._todos[i]._id === id) targetTodoIndex = i;
+        }
+
         this._todos.splice(targetTodoIndex, 1);
     }
 

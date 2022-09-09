@@ -9,7 +9,8 @@
 -   [x] 아래 요구사항을 토대로 데이터 모델링
 -   [x] `JSDoc`을 활용해 문서화
 -   [x] `GitHub Page`를 활용해 `JSDoc` 정적 페이지 배포
--   [ ] 작성한 `JSDoc`를 토대로 기능 구현
+-   [x] 작성한 `JSDoc`를 토대로 기능 구현
+-   [x] `TypeScript` 적용
 
 ### Todo
 
@@ -51,16 +52,18 @@ Todo {
 
 ```bash
 npm install
-or
-yarn
 ```
 
 ### JSDoc 웹사이트 생성
 
 ```bash
 npm run jsdoc
-or
-yarn jsdoc
+```
+
+### 시작
+
+```bash
+npm start
 ```
 
 ## 🔗 Reference

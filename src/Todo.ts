@@ -1,7 +1,13 @@
 export default class Todo {
+    _id: number;
+    _content: string;
+    _isDone: boolean;
+    _category: string;
+    _tags: string[];
+
     /**
      * 새로운 Todo를 만든다.
-     * @param { string } id - Todo의 아이디
+     * @param { number } id - Todo의 아이디
      * @param { string } content - Todo의 내용 (내용이 무조건 있어야 한다)
      * @param { string } category - Todo의 카테고리
      * @param { string[] } [tags] - Todo의 태그들 (optional)
@@ -17,7 +23,7 @@ export default class Todo {
     /**
      * Todo의 아이디를 조회한다.
      * @func
-     * @return { string } Todo의 아이디
+     * @return { number } Todo의 아이디
      */
     get id() {
         return this._id;
