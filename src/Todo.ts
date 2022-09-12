@@ -1,9 +1,9 @@
 export default class Todo {
-    _id: number;
-    _content: string;
-    _isDone: boolean;
-    _category: string;
-    _tags: string[];
+    #id: number;
+    #content: string;
+    #isDone: boolean;
+    #category: string;
+    #tags: string[];
 
     /**
      * 새로운 Todo를 만든다.
@@ -13,11 +13,11 @@ export default class Todo {
      * @param { string[] } [tags] - Todo의 태그들 (optional)
      */
     constructor(id, content, category, tags = []) {
-        this._id = id;
-        this._content = content;
-        this._isDone = false;
-        this._category = category;
-        this._tags = tags;
+        this.#id = id;
+        this.#content = content;
+        this.#isDone = false;
+        this.#category = category;
+        this.#tags = tags;
     }
 
     /**
@@ -26,7 +26,7 @@ export default class Todo {
      * @return { number } Todo의 아이디
      */
     get id() {
-        return this._id;
+        return this.#id;
     }
 
     /**
@@ -35,7 +35,7 @@ export default class Todo {
      * @return { string } Todo의 내용
      */
     get content() {
-        return this._content;
+        return this.#content;
     }
 
     /**
@@ -44,7 +44,7 @@ export default class Todo {
      * @return { string } Todo의 카테고리
      */
     get category() {
-        return this._category;
+        return this.#category;
     }
 
     /**
@@ -53,7 +53,7 @@ export default class Todo {
      * @return { string[] } Todo의 태그들
      */
     get tags() {
-        return this._tags;
+        return this.#tags;
     }
 
     /**
@@ -62,7 +62,7 @@ export default class Todo {
      * @return { bool } Todo의 완료여부
      */
     get isDone() {
-        return this._isDone;
+        return this.#isDone;
     }
 
     /**
@@ -70,7 +70,7 @@ export default class Todo {
      * @func
      */
     complete() {
-        this._isDone = true;
+        this.#isDone = true;
     }
 
     /**
@@ -78,7 +78,7 @@ export default class Todo {
      * @func
      */
     incomplete() {
-        this._isDone = false;
+        this.#isDone = false;
     }
 
     /**
@@ -87,7 +87,7 @@ export default class Todo {
      * @param { string } newContent - 새로운 내용
      */
     #editContent(newContent) {
-        this._content = newContent;
+        this.#content = newContent;
     }
 
     /**
@@ -96,7 +96,7 @@ export default class Todo {
      * @param { string } newCategory - 새로운 카테고리
      */
     #editCategory(newCategory) {
-        this._category = newCategory;
+        this.#category = newCategory;
     }
 
     /**
@@ -106,8 +106,8 @@ export default class Todo {
      * @param { string } newTag - 새로운 태그 이름
      */
     #editTag(targetTag, newTag) {
-        const targetTagIndex = this._tags.indexOf(targetTag);
-        this._tags[targetTagIndex] = newTag;
+        const targetTagIndex = this.#tags.indexOf(targetTag);
+        this.#tags[targetTagIndex] = newTag;
     }
 
     /**
@@ -116,8 +116,8 @@ export default class Todo {
      * @param { string } targetTag - 삭제하려는 태그 이름
      */
     #deleteTag(targetTag) {
-        const targetTagIndex = this._tags.indexOf(targetTag);
-        this._tags.splice(targetTagIndex, 1);
+        const targetTagIndex = this.#tags.indexOf(targetTag);
+        this.#tags.splice(targetTagIndex, 1);
     }
 
     /**
@@ -125,7 +125,7 @@ export default class Todo {
      * @func
      */
     #deleteAllTags() {
-        this._tags = [];
+        this.#tags = [];
     }
 
     /**
@@ -139,6 +139,6 @@ export default class Todo {
     edit(newTodo) {
         if (newTodo.content) this.#editContent(newTodo.content);
         if (newTodo.category) this.#editCategory(newTodo.category);
-        if (newTodo.tags) this._tags = this._tags;
+        if (newTodo.tags) this.#tags = this.#tags;
     }
 }

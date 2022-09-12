@@ -1,15 +1,15 @@
 import Todo from './Todo';
 
 export default class TodoList {
-    _nextTodoId: number;
-    _todos: Todo[];
+    #nextTodoId: number;
+    #todos: Todo[];
 
     /**
      * Todo List를 만든다.
      */
     constructor() {
-        this._nextTodoId = 1;
-        this._todos = [];
+        this.#nextTodoId = 1;
+        this.#todos = [];
     }
 
     /**
@@ -20,9 +20,9 @@ export default class TodoList {
      * @param { string[] } [tags] - Todo의 태그들 (optional)
      */
     addTodo(content, category, tags) {
-        const newTodo = new Todo(this._nextTodoId, content, category, tags);
-        this._todos.push(newTodo);
-        this._nextTodoId++;
+        const newTodo = new Todo(this.#nextTodoId, content, category, tags);
+        this.#todos.push(newTodo);
+        this.#nextTodoId++;
     }
 
     /**
@@ -32,8 +32,8 @@ export default class TodoList {
      * @return { Todo } 해당 id의 Todo
      */
     getTodo(id) {
-        for (let i=0; i<this._todos.length; i++) {
-            if (this._todos[i]._id === id) return this._todos[i];
+        for (let i=0; i<this.#todos.length; i++) {
+            if (this.#todos[i].id === id) return this.#todos[i];
         }
     }
 
@@ -43,7 +43,7 @@ export default class TodoList {
      * @return { Todo[] } 모든 Todo 배열
      */
     getAllTodos() {
-        return this._todos;
+        return this.#todos;
     }
 
     /**
@@ -53,11 +53,11 @@ export default class TodoList {
      */
     deleteTodo(id) {
         let targetTodoIndex = -1;
-        for (let i=0; i<this._todos.length; i++) {
-            if (this._todos[i]._id === id) targetTodoIndex = i;
+        for (let i=0; i<this.#todos.length; i++) {
+            if (this.#todos[i].id === id) targetTodoIndex = i;
         }
 
-        this._todos.splice(targetTodoIndex, 1);
+        this.#todos.splice(targetTodoIndex, 1);
     }
 
     /**
@@ -65,6 +65,6 @@ export default class TodoList {
      * @func
      */
     deleteAllTodos() {
-        this._todos = [];
+        this.#todos = [];
     }
 }
