@@ -1,9 +1,11 @@
+type Tags = string[];
+
 export default class Todo {
     #id: number;
     #content: string;
     #isDone: boolean;
     #category: string;
-    #tags: string[];
+    #tags: Tags;
 
     /**
      * 새로운 Todo를 만든다.
@@ -12,7 +14,7 @@ export default class Todo {
      * @param { string } category - Todo의 카테고리
      * @param { string[] } [tags] - Todo의 태그들 (optional)
      */
-    constructor(id, content, category, tags = []) {
+    constructor(id: number, content: string, category: string, tags: Tags = []) {
         this.#id = id;
         this.#content = content;
         this.#isDone = false;
@@ -86,7 +88,7 @@ export default class Todo {
      * @func
      * @param { string } newContent - 새로운 내용
      */
-    #editContent(newContent) {
+    #editContent(newContent: string) {
         this.#content = newContent;
     }
 
@@ -95,7 +97,7 @@ export default class Todo {
      * @func
      * @param { string } newCategory - 새로운 카테고리
      */
-    #editCategory(newCategory) {
+    #editCategory(newCategory: string) {
         this.#category = newCategory;
     }
 
