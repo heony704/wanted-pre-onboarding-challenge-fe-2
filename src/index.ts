@@ -1,10 +1,15 @@
-import TodoList from './TodoList';
+import List from "./List";
+import Todo from "./Todo";
 
-const todoList = new TodoList();
-todoList.addTodo('test contents', 'category1', ['javascript', 'jsdoc']);
-todoList.addTodo('test contents', 'category1', ['javascript', 'jsdoc']);
+const todoList = new List<Todo>();
+let nextId = "1";
 
-let testTodo = todoList.getTodo(2);
-if (testTodo !== undefined) testTodo.complete();
+const newTodo = new Todo("1", 'test contents', 'category1', ['javascript', 'jsdoc']);
+const nextTodo = new Todo("2", 'test contents', 'category1', ['javascript', 'jsdoc']);
 
-console.log(todoList.getAllTodos());
+todoList.addItem(newTodo);
+todoList.addItem(nextTodo);
+
+console.log(todoList.getAll());
+console.log(todoList.getAll().length);
+console.log(todoList.getItem("1"));
