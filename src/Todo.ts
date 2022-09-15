@@ -1,13 +1,13 @@
 type Tags = string[];
 
 export default class Todo {
-    #id: number;
+    #id: string;
     #content: string;
     #isDone: boolean;
     #category: string;
     #tags: Tags;
 
-    constructor(id: number, content: string, category: string, tags: Tags = []) {
+    constructor(id: string, content: string, category: string, tags: Tags = []) {
         this.#id = id;
         this.#content = content;
         this.#isDone = false;
